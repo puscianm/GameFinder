@@ -5,12 +5,6 @@ sys.path.append("../")
 
 from secure import passwords
 
-
-#response = requests.post("https://id.twitch.tv/oauth2/", headers= myHeader)
-#response = requests.post(f"https://id.twitch.tv/oauth2/token?client_id={passwords.CLIENTID}&client_secret={passwords.APIKEY}&grant_type=client_credentials")
-#response = requests.post(f"https://api.igdb.com/v4/games?client_id={passwords.CLIENTID}&authorization=Bearer%20{passwords.ACCESTOKEN}", body)
-#print(response.text)
-
 url = "https://api.igdb.com/v4/games"
 headers = {
     "Client-ID": passwords.CLIENTID,
