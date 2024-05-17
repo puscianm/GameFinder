@@ -17,13 +17,12 @@ headers = {
     "Authorization": f"Bearer {passwords.ACCESTOKEN}",
     "Content-Type": "application/json"  # Dodaj ten nagłówek, aby wskazać, że dane są przesyłane w formacie JSON
 }
-data = "fields *;"
+data = "fields name, rating_count; sort rating_count desc;"
 
 response = requests.post(url, headers=headers, data=data)
 
 if response.status_code == 200:
     print("Success!")
-    print(response.json())  # Wyświetla odpowiedź w formacie JSON
 
     json_formatted_str = json.dumps(response.json(), indent=3)
     print(json_formatted_str)
